@@ -34,7 +34,8 @@
             <EditText
                 android:layout_width="141dp"
                 android:layout_height="wrap_content"
-                android:id="@+id/editText" />
+                android:id="@+id/subtotalEditText"
+                android:inputType="number" />
         </LinearLayout>
 
         <LinearLayout
@@ -46,12 +47,13 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Tax Rate"
-                android:id="@+id/textView2" />
+                android:id="@+id/taxRateTextView" />
 
             <EditText
                 android:layout_width="141dp"
                 android:layout_height="wrap_content"
-                android:id="@+id/editText2" />
+                android:id="@+id/taxRateEditText"
+                android:inputType="number" />
 
         </LinearLayout>
 
@@ -64,12 +66,12 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Tip"
-                android:id="@+id/textView3" />
+                android:id="@+id/tipTextView" />
 
             <Spinner
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/spinner"
+                android:id="@+id/tipspinner"
                 android:layout_weight="1" />
         </LinearLayout>
 
@@ -82,12 +84,13 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Total"
-                android:id="@+id/textView" />
+                android:id="@+id/totalTextView" />
 
             <EditText
                 android:layout_width="141dp"
                 android:layout_height="wrap_content"
-                android:id="@+id/editText3" />
+                android:id="@+id/totalEditText"
+                android:inputType="number" />
 
         </LinearLayout>
     </LinearLayout>
