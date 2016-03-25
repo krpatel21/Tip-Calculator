@@ -86,11 +86,11 @@
                 android:text="Total"
                 android:id="@+id/totalTextView" />
 
-            <EditText
+            <TextView
                 android:layout_width="141dp"
                 android:layout_height="wrap_content"
                 android:id="@+id/totalEditText"
-                android:inputType="numberDecimal" />
+                 />
 
         </LinearLayout>
     </LinearLayout>

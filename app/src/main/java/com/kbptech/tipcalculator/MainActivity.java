@@ -5,7 +5,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.text.Editable;
 import android.text.TextWatcher;
-import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.ArrayAdapter;
@@ -21,7 +20,7 @@ public class MainActivity extends AppCompatActivity {
     private EditText subtotalEditText;
     private EditText tipEditText;
     private EditText taxRateEditText;
-    private EditText totalEditText;
+    private TextView totalTextView;
     private double billAmount=0;
     private double taxRate=0;
     private static final NumberFormat currencyFormat =
@@ -37,7 +36,7 @@ public class MainActivity extends AppCompatActivity {
         subtotalEditText = (EditText) findViewById(R.id.subtotalEditText);
 //        tipEditText = new EditText(this, R.id.tip);
         taxRateEditText = (EditText) findViewById(R.id.taxRateEditText);
-        totalEditText = (EditText) findViewById(R.id.totalEditText);
+        totalTextView = (TextView) findViewById(R.id.totalEditText);
 
 //        subtotalEditText.setText("0.00");
 //        taxRateEditText.setText("0.0");
@@ -108,7 +107,7 @@ public class MainActivity extends AppCompatActivity {
     public TextWatcher taxRateTextWatcher = new TextWatcher() {
         @Override
         public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-
+            update();
         }
 
         @Override
@@ -132,7 +131,7 @@ public class MainActivity extends AppCompatActivity {
 
         double tip = Double.parseDouble(s.getSelectedItem().toString());
         double total = billAmount + billAmount * (taxRate / 100.0) + billAmount* (tip / 100.0);
-        totalEditText.setText(currencyFormat.format(total));
+        totalTextView.setText(currencyFormat.format(total));
     }
 
 }
