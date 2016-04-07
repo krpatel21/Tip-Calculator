@@ -21,6 +21,7 @@ public class MainActivity extends AppCompatActivity {
     private EditText tipEditText;
     private EditText taxRateEditText;
     private TextView totalTextView;
+    private TextView tipAmountTV;
     private double billAmount=0;
     private double taxRate=0;
     private static final NumberFormat currencyFormat =
@@ -37,6 +38,7 @@ public class MainActivity extends AppCompatActivity {
 //        tipEditText = new EditText(this, R.id.tip);
         taxRateEditText = (EditText) findViewById(R.id.taxRateEditText);
         totalTextView = (TextView) findViewById(R.id.totalEditText);
+        tipAmountTV = (TextView) findViewById(R.id.tipDisplayTextView);
 
 //        subtotalEditText.setText("0.00");
 //        taxRateEditText.setText("0.0");
@@ -132,7 +134,9 @@ public class MainActivity extends AppCompatActivity {
 
         double tip = Double.parseDouble(s.getSelectedItem().toString());
         double total = billAmount + billAmount * (taxRate / 100.0) + billAmount* (tip / 100.0);
+        double tipAmount = billAmount* (tip / 100.0);
+
+        tipAmountTV.setText(currencyFormat.format(tipAmount));
         totalTextView.setText(currencyFormat.format(total));
     }
-
 }
